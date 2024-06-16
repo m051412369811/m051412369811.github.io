@@ -7,7 +7,12 @@
     <style>
         
         .head{
-            background-color: brown;
+            width: 100%;
+            height: 300px;
+            background-color: #e2dfdf;
+            margin: 0;
+            text-align: center;
+            align-content: center;
         }
         h1{
             font-size: 35px;
@@ -20,7 +25,6 @@
         .card{
             display: flex;
             padding: 40px;
-
         }
         .list{
             display: flex;
@@ -29,28 +33,49 @@
             width: 600px;
         }
         .list_inside{
-            gap: auto;
-            list-style-type: circle;
+            margin: auto;
         }
-        
+        ul{
+            list-style: circle;
+        }
+        .content{
+            margin: 20px;
+        }
         .card:nth-child(2n){
             flex-direction: row-reverse;
         }
-        .morefunc{
-            background-color: #a29b9b;
+        section .morefunc{
+            width: 100%;
+            height: 600px;
+            background-color: #000;
         }
         .mini_card{         
-            width: 150px;
+            width: 350px;
+            margin: 30px;
         }
-        .morefunc div .mini_cards#row{
+        .mini_cards{
+            width: 100%;
+            justify-content: center;
             display: flex;
+            flex-wrap: wrap;
         }
-
+        .funcs_title{
+            text-align: center;
+        }
+        .icon{
+            text-align: center;            
+        }
+        .mini_card_word{
+            text-align: center;
+        }
+        .mini_card img{
+            width: 50%;
+        }
     </style>
 
 </head>
 <body>
-    <section calss="head">
+    <section class="head">
         <h1>單一平台就能助你<br>在全通路輕鬆開店創業</h1>
         <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
     </section>
@@ -61,18 +86,19 @@
                 <div class="card_writing">
                     <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
                     <div class="list">
-                        <div calss="list_inside">
+                        <div class="list_inside">
                             <ul>豐富版型主題與字型搭配</ul>
                             <ul>RWD 響應式網頁設計</ul>
                             <ul>開放 HTML／CSS 編輯</ul>
+                            <a href="https://shopline.tw/online-store-setup">看看開店祕技</a>
                         </div>
                         <div class="list_inside">
                             <ul>SEO 搜尋引擎優化</ul>
                             <ul>一頁商店</ul>
                             <ul>獨有網址 ＆ SSL 安全憑證</ul>
                         </div>
+                        
                     </div>
-                    <a href="https://shopline.tw/online-store-setup">看看開店祕技</a>
                 </div>
             </div>
             <div class="card_pics">
@@ -85,7 +111,7 @@
                 <div class="card_input">
                     <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
                     <div class="list">
-                        <div calss="list_inside">
+                        <div class="list_inside">
                             <ul>線上／線下信用卡刷卡</ul>
                             <ul>第三方金流／行動支付整合</ul>
                             <ul>超商代碼／條碼繳費</ul>
@@ -109,7 +135,7 @@
                 <div class="card_input">
                     <p>多元優惠活動、會員集客機制、網紅分潤等多種優惠促銷，將電商行銷玩法一網打盡；加上廣告追蹤助你有效優化行銷活動，刺激顧客下單、吸引鐵粉回購！</p>
                     <div class="list">
-                        <div calss="list_inside">
+                        <div class="list_inside">
                             <ul>推薦活動與分潤</ul>
                             <ul>A+B 優惠活動</ul>
                             <ul>會員分級／點數／購物金</ul>
@@ -178,9 +204,9 @@
     </section>
     <section class="moreFunc">
         <div class="funchead">
-            <h2>更多功能與服務</h2>
+            <h2 class="funcs_title">更多功能與服務</h2>
         </div>
-        <div calss="mini_cards" id="row">
+        <div class="mini_cards" id="row" >
             <div class="mini_card">
                 <div class="icon">
                     <img src="shopline_photo/asset 0.svg" alt="">
@@ -236,7 +262,6 @@
                 </div>
             </div>
         </div>
-
     </section>
 </body>
 </html>
