@@ -8,12 +8,53 @@
         footer
         {
             background-color: gray;
+            display: flex;
+        }
+        div img
+        {
+            width: auto;
+            height: auto;
+        }
+        .section
+        {
+            display: flex;
+            flex-direction: row;
         }
         .category
         {
             vertical-align: top;
             display: inline-block;
-            text-decoration-style: none;
+            font-size: 10px;
+        }
+        .outerlink
+        {
+            display: flex;
+            flex-direction: row;            
+        }
+        .links
+        {
+            display: flex;
+            flex-direction: row;
+            margin: 20px;
+        }
+        .socialmedia
+        {
+            display: flex;
+            flex-direction: row;
+            margin: 20px; 
+        }
+        div li
+        {
+            list-style-type: none;            
+        }
+        .category a
+        {
+            text-decoration: none;
+        }
+        .info
+        {
+            display: flex;
+            flex-direction: row;
         }
                 
     </style>
@@ -21,95 +62,136 @@
 <body>
     
     <footer>
-        <div class="category">
-            <ul >內容分類
-                <li>
-                    <a href="https://www.businessweekly.com.tw/channel/focus/0000000312">焦點</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/channel/international/0000000316">國際</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/channel/business/0000000319">財經</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/channel/management/0000000326">管理</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/channel/careers/0000000331">職場</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/channel/style/0000000337">共好ESG</a>
-                </li>
-            </ul>
+            <div class="section">
+                <div class="category">
+                    <ul >內容分類
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/channel/focus/0000000312">焦點</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/channel/international/0000000316">國際</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/channel/business/0000000319">財經</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/channel/management/0000000326">管理</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/channel/careers/0000000331">職場</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/channel/style/0000000337">共好ESG</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <ul >特色頻道
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/opinion">名家專欄</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/Event/featurelist.aspx">特別企劃</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/multimedia/">影音</a>
+                        </li>
+                        <li>
+                            <a href="https://wealth.businessweekly.com.tw/">商周財富網</a>
+                        </li>
+                        <li>
+                            <a href="https://health.businessweekly.com.tw/">良醫健康網</a>
+                        </li>                
+                    </ul>
+                </div>
+                <div class="category">
+                    <ul >商周線上讀
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=2">商周封面</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=4">兩岸國際</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=8">人物報導</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=3">職場管理</a>
+                        </li>
+                        <li>
+                            <a href="https://bw.businessweekly.com.tw/event/payment-flash/?prodId=PROD000015814&utm_source=BWFooter&Ftag=BWFooter">申請七天試閱</a>
+                        </li>                
+                    </ul>
+                </div>
+                <div class="category">
+                    <ul >多元服務
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=2">訂閱商周</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=4">客服中心</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=8">常見問答</a>
+                        </li>
+                        <li>
+                            <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=3">活動總覽</a>
+                        </li>
+                        <li>
+                            <a href="https://bw.businessweekly.com.tw/event/payment-flash/?prodId=PROD000015814&utm_source=BWFooter&Ftag=BWFooter">商周Store</a>
+                        </li> 
+                        <li>
+                            <a href="https://bw.businessweekly.com.tw/event/payment-flash/?prodId=PROD000015814&utm_source=BWFooter&Ftag=BWFooter">會員中心</a>
+                        </li>  
+                        <li>
+                            <a href="https://bw.businessweekly.com.tw/event/payment-flash/?prodId=PROD000015814&utm_source=BWFooter&Ftag=BWFooter">序號兌換</a>
+                        </li>              
+                    </ul>
+                </div>
+            </div>
+        
+        <hr>
+        <div class="area">
+            <div class="section">
+                <div class="outerlink" >
+                    <div class="links"><a href="https://www.businessweekly.com.tw/"><img src="/magazineFooterImage/01.png" alt=""></a></div>
+                    <div class="links"><a href="https://smart.businessweekly.com.tw/"><img src="/magazineFooterImage/02.png" alt=""></a></div>
+                    <div class="links"><a href="https://health.businessweekly.com.tw/"><img src="/magazineFooterImage/03.png" alt=""></a></div>
+                    <div class="links"><a href="https://alive.businessweekly.com.tw/"><img src="/magazineFooterImage/04.png" alt=""></a></div>
+                    <div class="links"><a href="https://www.businessweekly.com.tw/bwc/"><img src="/magazineFooterImage/05.png" alt=""></a></div>
+                </div>   
+                <div class="outerlink" >
+                    <div class="socialmedia"><a href="https://www.businessweekly.com.tw/"><img src="/magazineFooterImage/06.png" alt=""></a></div>
+                    <div class="socialmedia"><a href="https://smart.businessweekly.com.tw/"><img src="/magazineFooterImage/07.png" alt=""></a></div>
+                    <div class="socialmedia"><a href="https://health.businessweekly.com.tw/"><img src="/magazineFooterImage/08.png" alt=""></a></div>
+                    <div class="socialmedia"><a href="https://alive.businessweekly.com.tw/"><img src="/magazineFooterImage/09.png" alt=""></a></div>
+                    <div class="socialmedia"><a href="https://www.businessweekly.com.tw/bwc/"><img src="/magazineFooterImage/10.svg" alt=""></a></div>
+                    <div class="socialmedia"><a href="https://www.businessweekly.com.tw/bwc/"><img src="/magazineFooterImage/11.svg" alt=""></a></div>
+                </div>
+                <div >
+                    <div>
+                        <a href="https://www.businessweekly.com.tw/bwplus/landingpage/">下載App抽好禮</a>
+                    </div>
+                    <div>
+                        <a href="https://www.businessweekly.com.tw/epaper">訂閱電子報</a>
+                    </div>    
+                </div>
+                <div class="info">
+                    <div>客戶服務專線
+                        <address>(02) 2510-8888</address>
+                    </div>
+                    <div>傳真
+                        <address>(02) 2503-6989</address>
+                    </div>
+                    <div>服務時間
+                        <div>
+                            週一至週五09:00~18:00 (例假日除外)
+                        </div>
+                    </div>                    
+                </div>
+            </div>
         </div>
-        <div class="category">
-            <ul >特色頻道
-                <li>
-                    <a href="https://www.businessweekly.com.tw/opinion">名家專欄</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/Event/featurelist.aspx">特別企劃</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/multimedia/">影音</a>
-                </li>
-                <li>
-                    <a href="https://wealth.businessweekly.com.tw/">商周財富網</a>
-                </li>
-                <li>
-                    <a href="https://health.businessweekly.com.tw/">良醫健康網</a>
-                </li>                
-            </ul>
-        </div>
-        <div class="category">
-            <ul >商周線上讀
-                <li>
-                    <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=2">商周封面</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=4">兩岸國際</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=8">人物報導</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=3">職場管理</a>
-                </li>
-                <li>
-                    <a href="https://bw.businessweekly.com.tw/event/payment-flash/?prodId=PROD000015814&utm_source=BWFooter&Ftag=BWFooter">申請七天試閱</a>
-                </li>                
-            </ul>
-        </div>
-        <div class="category">
-            <ul >多元服務
-                <li>
-                    <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=2">訂閱商周</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=4">客服中心</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=8">常見問答</a>
-                </li>
-                <li>
-                    <a href="https://www.businessweekly.com.tw/Archive/Category/Index?Type1Url=3">活動總覽</a>
-                </li>
-                <li>
-                    <a href="https://bw.businessweekly.com.tw/event/payment-flash/?prodId=PROD000015814&utm_source=BWFooter&Ftag=BWFooter">商周Store</a>
-                </li> 
-                <li>
-                    <a href="https://bw.businessweekly.com.tw/event/payment-flash/?prodId=PROD000015814&utm_source=BWFooter&Ftag=BWFooter">會員中心</a>
-                </li>  
-                <li>
-                    <a href="https://bw.businessweekly.com.tw/event/payment-flash/?prodId=PROD000015814&utm_source=BWFooter&Ftag=BWFooter">序號兌換</a>
-                </li>              
-            </ul>
-        </div>
-        <div class="category">
-            <div class="links"><a href="https://www.businessweekly.com.tw/"><img src="https://ibw.bwnet.com.tw/file/img/logo-white-small.png" alt=""></a></div>
-            <div class="links"><a href="https://smart.businessweekly.com.tw/"><img src="https://ibw.bwnet.com.tw/file/img/smart-white.png" alt=""></a></div>
-        </div>
+    
     </footer>
 </body>
 </html>

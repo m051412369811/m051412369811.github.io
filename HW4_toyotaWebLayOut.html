@@ -5,6 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            margin: 0;padding: 0;list-style: none;
+        }
+        .card {
+            width: 960px;
+            padding: 50px 0;
+            margin: auto;
+        }
+        .card .titlebox {
+            width: 320px;
+            color: #fff;
+            position: relative;
+        }
+        .card .titlebox .title {
+            font-size: 30px;
+            background-color: #f00;
+            padding: 10px;
+            display: flex;
+        }
+        .card .titlebox .text {
+            background-color: #000;
+            position: absolute;
+            padding: 10px;
+            vertical-align: middle;
+            padding-top: 15px;
+            text-align: left;
+            padding-bottom: 50px;
+        } 
+        
+        .card .videobox {
+            width: 700px;
+            margin-left: auto;
+            margin-right: 50px;
+            outline: 1px solid #f00;
+        }
+        .card .videobox a {
+            display: flex;
+            align-items: center;
+        }
+        .card .videobox img:first-child {
+            vertical-align: middle;
+            margin-right: -60px;
+        }
+        .card .videobox img:last-child {
+            vertical-align: middle;
+        }
+        .card .videobox img {
+            vertical-align: middle;
+        }
 
     </style>
 </head>
@@ -13,13 +62,13 @@
     <div class="cardlist">
         <div class="card">
             <div class="titlebox">
-                <div class="tilte">
+                <div class="title">
                     <h2>01</h2>
                     <h2>操控樂趣</h2>
                 </div>
                 <div class="text">
                     <h3>人人滿意的駕駛體驗</h3>
-                    <p>透過最佳重量分配，實現平順起<br>步、直線穩定加速，過彎同時保持<br>車身平穩，帶給駕駛更靈敏的道路<br>反饋，享受隨心馳騁的奔馳快感</p>
+                    <p>透過最佳重量分配，實現平順起步、直線穩定加速，過彎同時保持車身平穩，帶給駕駛更靈敏的道路反饋，享受隨心馳騁的奔馳快感</p>
                 </div>
             </div>
             <div class="videobox">
@@ -46,7 +95,7 @@
         </div>
         <div class="card">
             <div class="titlebox">
-                <div class="tilte">
+                <div class="title">
                     <h2>02</h2>
                     <h2>安全守護</h2>
                 </div>
@@ -75,7 +124,7 @@
         </div>
         <div class="card">
             <div class="titlebox">
-                <div class="tilte">
+                <div class="title">
                     <h2>03</h2>
                     <h2>乘坐舒適</h2>
                 </div>
@@ -108,7 +157,7 @@
         </div>
         <div class="card">
             <div class="titlebox">
-                <div class="tilte">
+                <div class="title">
                     <h2>04</h2>
                     <h2>以人為本</h2>
                 </div>
@@ -137,7 +186,7 @@
         </div>
         <div class="card">
             <div class="titlebox">
-                <div class="tilte">
+                <div class="title">
                     <h2>05</h2>
                     <h2>引以為傲</h2>
                 </div>

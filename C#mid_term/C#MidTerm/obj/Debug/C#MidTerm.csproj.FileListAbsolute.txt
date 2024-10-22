@@ -1,0 +1,7 @@
+C:\Users\m0514\Desktop\m051412369811.github.io\C#mid_term\C#MidTerm\bin\Debug\C#MidTerm.exe.config
+C:\Users\m0514\Desktop\m051412369811.github.io\C#mid_term\C#MidTerm\bin\Debug\C#MidTerm.exe
+C:\Users\m0514\Desktop\m051412369811.github.io\C#mid_term\C#MidTerm\bin\Debug\C#MidTerm.pdb
+C:\Users\m0514\Desktop\m051412369811.github.io\C#mid_term\C#MidTerm\obj\Debug\C#MidTerm.csproj.AssemblyReference.cache
+C:\Users\m0514\Desktop\m051412369811.github.io\C#mid_term\C#MidTerm\obj\Debug\C#MidTerm.csproj.CoreCompileInputs.cache
+C:\Users\m0514\Desktop\m051412369811.github.io\C#mid_term\C#MidTerm\obj\Debug\C#MidTerm.exe
+C:\Users\m0514\Desktop\m051412369811.github.io\C#mid_term\C#MidTerm\obj\Debug\C#MidTerm.pdb
