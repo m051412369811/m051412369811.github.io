@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <style>
+        #map { 
+            height: 80vh;
+            width: 100%;
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YouBike2.0站點地圖練習</h1>
+        <div class="row">
+            <div class="col-6">
+                <div id="map"></div>
+            </div>
+            <div class="col-6">
+                <h2>站點資訊</h2>
+                <div class="d-flex p-2">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle w-50 p-3" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle w-50 p-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <table class="my_table d-none">
+                        <thead>
+                            <tr>
+                                <th scope="col">區域</th>
+                                <th scope="col">站點名稱</th>
+                                <th scope="col">數量(剩餘／空位／總共)</th>
+                                <th scope="col">地圖</th>
+                                <th scope="col">經緯度</th>
+                            </tr>
+                        </thead>
+                        <tbody class="data_row">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
+    <script>
+        const map = L.map("map");
+        const markers = L.markerClusterGroup();;
+
+        
+        const taipeiYouBikeData = "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json";
+
+        window.onload= function(){
+            initMap();
+            fetchYouBikeData().then(data=>{
+                console.log(data);
+                data.forEach(station=>{
+                    renderingStationInfo(station);
+                    setUpMarkers(station);                    
+                })
+                document.querySelector(".my_table").classList.remove("d-none");
+            })
+        };
+
+        function fetchYouBikeData(){
+            const taipeiYouBikeData = "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json";
+            return fetch(taipeiYouBikeData)
+            .then(res=>res.json());            
+        }
+
+        function initMap(){
+        //設定圖資
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        map.setView([25.0415001,121.536222],17)
+        }
+
+        function renderingStationInfo(station){
+            const tr = document.createElement("tr");
+                    const sareaTd = document.createElement("td");
+                    sareaTd.textContent = `${station.sarea}`
+                    const stationNameTd = document.createElement("td");
+                    stationNameTd.textContent = `${station.sna}`
+                    const infoTd = document.createElement("td");
+                    infoTd.textContent = `${station.available_rent_bikes}/${station.available_return_bikes
+}/${station.total}`
+                    const mapTd = document.createElement("td");
+                    const mapIcon = document.createElement("i");
+                    mapIcon.classList.add("fa-solid","fa-map-location-dot");
+                    mapIcon.addEventListener("click",()=>{
+                    map.flyTo([station.latitude,station.longitude],19)})
+                    mapTd.append(mapIcon);
+                    const latLngTd = document.createElement("td");
+                    const latLngIcon = document.createElement("i");
+                    latLngIcon.classList.add("fa-solid","fa-circle-info");
+                    latLngIcon.setAttribute("data-bs-toggle","tooltip");
+                    latLngIcon.setAttribute("data-bs-title",`${station.latitude},${station.longitude}`);
+                    new bootstrap.Tooltip(latLngIcon);
+                    latLngTd.append(latLngIcon);
+
+                    tr.append(sareaTd,stationNameTd,infoTd,mapTd,latLngTd);
+                    document.querySelector(".data_row").append(tr);
+        }
+
+        function setUpMarkers(station){
+            const marker = L.marker([station.latitude,station.longitude]);
+            marker.bindPopup(`<p>${station.sna}</p>剩餘/空位/總共:${station.available_rent_bikes}/${station.available_return_bikes}/${station.total}`)
+            markers.addLayer(marker);
+            map.addLayer(markers);
+            };
+
+    </script>
+</body>
+</html>
